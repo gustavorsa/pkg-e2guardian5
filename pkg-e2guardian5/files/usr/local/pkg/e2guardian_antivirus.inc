@@ -30,6 +30,8 @@ global $clamav_uid, $clamav_gid, $config;
 $clamav_uid = "clamav";
 $clamav_gid = "clamav";
 
+include('/usr/local/pkg/e2guardian.inc');
+
 /* If /var is in RAM, the AV database will not be persistent there and space is
 	limited, so relocate it. */
 if (isset($config['system']['use_mfs_tmpvar'])) {
