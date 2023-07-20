@@ -1,3 +1,0 @@
-Wpad package for pfSense.
-
-Distribute your wpad file in a separate http nginx process.

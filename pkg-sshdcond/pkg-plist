@@ -1,6 +1,0 @@
-pkg/sshdcond.xml
-pkg/sshdcond.inc
-pkg/sshdcond_sync.xml
-/etc/inc/priv/sshdcond.priv.inc
-%%DATADIR%%/info.xml
-@dir /etc/inc/priv
