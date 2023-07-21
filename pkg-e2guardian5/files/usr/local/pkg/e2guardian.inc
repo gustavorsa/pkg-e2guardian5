@@ -1,4 +1,4 @@
-<?php
+git <?php
 /*
  * e2guardian.inc
  *
@@ -92,7 +92,7 @@ function e2_text_area_decode($text) {
 
 function e2g_check_sched($iface_sched){
 	global $config, $e2g_sched_in_use;
-	$a_schedules = &$config['schedules']/*['schedule']*/;
+	$a_schedules = $config['schedules']/*['schedule']*/;
 	$e2g_scd = true;
 	foreach ($a_schedules as $schedule){
 		if ($schedule['name'] == $iface_sched && $iface_sched <> 'Always active') {
@@ -743,7 +743,7 @@ $files = array(
 		$config['installedpackages']['e2guardianblacklist']['config'][0] = array(
 			'liston' => 'both',
 			'cron' => '02days',
-			'url' => "http://www.shallalist.de/Downloads/shallalist.tar.gz",
+			'url' => "https://web.archive.org/web/20210502020725/http://www.shallalist.de/Downloads/shallalist.tar.gz", //"http://www.shallalist.de/Downloads/shallalist.tar.gz",
  			'enable_custom_script' => "",
 			'update_script' => "");
 	}
@@ -1109,7 +1109,7 @@ $files = array(
 
 	//Antivirus ACL
 	//create a default setup if not exists
-	if (!is_array($config['installedpackages']['e2guardianantivirusacl']['config'])) {
+	/*if (!is_array($config['installedpackages']['e2guardianantivirusacl']['config'])) {
 		$config['installedpackages']['e2guardianantivirusacl']['config'][0] = array();
 	}
 
@@ -1134,14 +1134,14 @@ $files = array(
 		$load_samples++;
 	}
 	file_put_contents($e2guardian_dir . "/lists/contentscanners/exceptionvirusurllist", ($e2guardian_antivirus['url_enabled'] ? e2_text_area_decode($config['installedpackages']['e2guardianantivirusacl']['config'][0]['url_list']) : ""), LOCK_EX);
-
+	
 	//exceptionvirusextensionlist
 	if ($e2guardian_antivirus['extension_list'] == "" && file_exists($e2guardian_dir . '/lists/contentscanners/exceptionvirusextensionlist.sample')) {
 		$config['installedpackages']['e2guardianantivirusacl']['config'][0]['extension_list'] = base64_encode(file_get_contents($e2guardian_dir . '/lists/contentscanners/exceptionvirusextensionlist.sample'));
 		$load_samples++;
 	}
 	file_put_contents($e2guardian_dir . "/lists/contentscanners/exceptionvirusextensionlist", ($e2guardian_antivirus['extension_enabled'] ? e2_text_area_decode($config['installedpackages']['e2guardianantivirusacl']['config'][0]['extension_list']):""), LOCK_EX);
-
+	*/
 	//log report
 	$rf = "/usr/local/share/e2guardian/languages/{$reportlanguage}/template.html";
 	if(file_exists($rf) && !file_exists("$rf.sample")) {
